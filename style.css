@@ -20,6 +20,26 @@ body {
   color: var(--page-text-color);
 }
 
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkboxContainer + .checkboxContainer {
+  margin-top: 1rem;
+}
+
+input {
+  width: 1.5rem;
+  height: 2rem;
+}
+
+label {
+  font-size: 3rem;
+}
+
 /* Fallbacks für manche Styles benutzen, S.13 unten */
 
 /* Füge media queries ein, S.15 unten*/
