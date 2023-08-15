@@ -1,3 +1,4 @@
+/*
 const fastCheckbox = document.querySelector("#fastCheckbox");
 const cheapCheckbox = document.querySelector("#cheapCheckbox");
 const goodCheckbox = document.querySelector("#goodCheckbox");
@@ -68,3 +69,45 @@ goodCheckbox.addEventListener("input", function (event) {
     goodCheckbox.removeAttribute("checked");
   }
 });
+*/
+
+const theInputs = document.querySelectorAll("input");
+const checkedBoxes = [];
+
+for (let i = 0; i < theInputs.length; i++) {
+  theInputs[i].addEventListener("input", function () {
+    if (theInputs[i].checked === true) {
+      if (checkedBoxes.length === 2) {
+        checkedBoxes[1].checked = false;
+        checkedBoxes.pop();
+      }
+      checkedBoxes.push(theInputs[i]);
+      console.log(checkedBoxes);
+    } else {
+      checkedBoxes.pop();
+      console.log(checkedBoxes);
+    }
+  });
+}
+
+/*
+const theInputs = document.querySelectorAll("input");
+let checkedBoxesAmount = 0;
+let checkedBoxes = null;
+
+for (let i = 0; i < theInputs.length; i++) {
+  theInputs[i].addEventListener("input", function () {
+    console.log(theInputs[i]);
+    if (theInputs[i].checked === true) {
+      if (checkedBoxesAmount === 2) {
+        checkedBoxes.checked = false;
+        checkedBoxesAmount--;
+      }
+      checkedBoxes = theInputs[i];
+      checkedBoxesAmount++;
+    } else {
+      checkedBoxesAmount--;
+    }
+  });
+}
+*/
